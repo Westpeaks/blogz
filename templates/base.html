@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>Build a Blog</title>
+        <style>
+            h2, body {
+                font-family: sans-serif;
+            }
+            h2 {
+                color: #0000FF;
+            }
+            p{
+                color: #3366FF;
+            }
+            textarea {
+                margin: 10px 0;
+                width: 540px;
+                height: 120px;
+            }
+        </style>
     </head>
-    
+
+    <div>
+        <a href='/new_post'>New Post</a>
+        <a href='/'>Current Posts</a> 
+    </div>
+    <div>
+        <h1>Build a Blog</h1>
+    </div>
     <body>
 
         {% block content %}

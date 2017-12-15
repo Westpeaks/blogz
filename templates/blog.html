@@ -1,45 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <h1>Build a Blog</h1>
-        <form method='post'>
-        <div>
-            <label>
-                New Post
-            </label>
-            <div>
-            <label>
-                Entry Title:
-                <input type="text" name='heading' />
-            </label>
-            </div>
-            <div>
-            <label>
-                Entry:
-            </label>
-            </div>
-            <div>
-                <input type="text" name='entry' />
-            </div>   
-            <input type="submit" value='Add Entry' />        
-        </div>
-        </form>
-
-        <hr />
 
         {% if entries|length == 0 %}
         <p>No posts yet</p>
         {% else %}
 
-            <ul>
-                {% for heading in headings %}
-                <h2>{{heading}}</h2>
-                {% endfor %}
                 {% for entry in entries %}
-                <p>{{entry}}</p>
-                {% endfor %}
+                <h2><a href='/single_post?id={{entry.id}}'>{{entry.title}}</a></h2>
+                <p>{{entry.body}}</p>
                 <hr />
-            </ul>
+                {% endfor %}
 
         {% endif %}
 {% endblock %}

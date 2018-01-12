@@ -9,6 +9,7 @@
                 {% for entry in entries %}
                 <h2><a href='/single_post?id={{entry.id}}'>{{entry.title}}</a></h2>
                 <p>{{entry.body}}</p>
+                <p>written by <a href='/singleuser?owner_id={{entry.owner.id}}'>{{entry.owner.username}}</a></p>
                 <hr />
                 {% endfor %}
 

@@ -19,15 +19,27 @@
             }
         </style>
     </head>
+    <body>
+    <div>
+        <a href='/logout'>log out</a>
+    </div>
 
     <div>
         <a href='/new_post'>New Post</a>
-        <a href='/'>Current Posts</a> 
+        <a href='/blog'>Current Posts</a>
+        <a href='/'>Home</a> 
     </div>
     <div>
         <h1>Build a Blog</h1>
     </div>
-    <body>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            <ul>
+            {% for category,message in messages %}
+                <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+            </ul>
+        {% endwith %}
 
         {% block content %}
         {% endblock %}
